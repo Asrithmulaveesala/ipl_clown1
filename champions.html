@@ -1,0 +1,225 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIAN PREMIER LEAGUE</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">IPL</div>
+        <nav class="nav-items">
+            <a href="teams.html">Teams</a>
+            <a href="http://localhost/H2_PROJECT/points_table/points_table.php">Points Table</a>
+            <a href="#">Matches</a>
+            <a href="#">News</a>
+            <a href="login.html">Sign in </a>
+            <a href="registration.html">Sign up</a>
+
+        </nav>
+        <input type="text" placeholder="Search..." class="search-bar">
+    </header>
+
+    <div class="image-row">
+        <div class="image-box">
+            <div class="slideshow">
+                <img src="pic1.jpg" alt="Image 1" class="slide">
+                <img src="pic2.jpg" alt="Image 4" class="slide">
+                <img src="pic3.jpg" alt="Image 7" class="slide">
+            </div>
+        </div>
+        <div class="image-box">
+            <div class="slideshow">
+                <img src="pic2.jpg" alt="Image 2" class="slide">
+                <img src="pic3.jpg" alt="Image 5" class="slide">
+                <img src="pic1.jpg" alt="Image 8" class="slide">
+            </div>
+        </div>
+        <div class="image-box">
+            <div class="slideshow">
+                <img src="pic3.jpg" alt="Image 3" class="slide">
+                <img src="pic1.jpg" alt="Image 6" class="slide">
+                <img src="pic3.jpg" alt="Image 9" class="slide">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="about" class="section">
+            <div>
+                <h2>About the Tournament</h2>
+                <p>The Indian Premier League (IPL) is one of the most popular and lucrative professional T20 cricket leagues in the world. Founded in 2008 by the Board of Control for Cricket in India (BCCI), the IPL brings together top cricketing talent from around the globe to compete in a fast-paced, high-energy format.</p>
+            </div>
+        </section>
+        <section id="results" class="section">
+            <div>
+                <h2>Match Results</h2>
+                <p>Match 1: Team A won by 5 wickets</p>
+                <p>Match 2: Team C won by 20 runs</p>
+            </div>
+        </section>
+    </div>
+    <div class="b1">
+        <h1>WHAT ARE YOU LOOKING FOR</h1>
+    <div class="buttons-container">
+        <button class="btn" onclick="openpage1()">POINTS TABLE</button>
+        <button class="btn">GALLERY</button>
+        <button class="btn">FIXTURES</button>
+        <button class="btn" onclick="openPage()">ALL TEAMS</button>
+    </div>
+    </div>
+    <!-- HTML: Points Table Section -->
+<div class="points-table-container">
+    <h2>Points Table</h2>
+    <div class="points-card">
+        <h3>1. SUNRISERS HYDERABAD</h3>
+        <img src="srh.png" alt="Sunrisers Hyderabad">
+        <p><strong>Points:</strong> 2</p>
+        <p><strong>Played:</strong> 1</p>
+        <p><strong>Won:</strong> 1</p>
+        <p><strong>NRR:</strong> <span class="nrr positive">2.200</span></p>
+        <p><strong>Recent Form:</strong> <span class="form">W</span></p>
+    </div>
+
+    <div class="points-card">
+        <h3>2. ROYAL CHALLENGERS BENGALURU</h3>
+        <img src="rcb.png" alt="Royal Challengers Bengaluru">
+        <p><strong>Points:</strong> 2</p>
+        <p><strong>Played:</strong> 1</p>
+        <p><strong>Won:</strong> 1</p>
+        <p><strong>NRR:</strong> <span class="nrr positive">2.137</span></p>
+        <p><strong>Recent Form:</strong> <span class="form">W</span></p>
+    </div>
+
+    <div class="points-card">
+        <h3>3. PUNJAB KINGS</h3>
+        <img src="pbks.png" alt="Punjab Kings">
+        <p><strong>Points:</strong> 2</p>
+        <p><strong>Played:</strong> 1</p>
+        <p><strong>Won:</strong> 1</p>
+        <p><strong>NRR:</strong> <span class="nrr positive">0.550</span></p>
+        <p><strong>Recent Form:</strong> <span class="form">W</span></p>
+    </div>
+
+    <div class="points-card">
+        <h3>4. CHENNAI SUPER KINGS</h3>
+        <img src="csk.png" alt="Chennai Super Kings">
+        <p><strong>Points:</strong> 2</p>
+        <p><strong>Played:</strong> 1</p>
+        <p><strong>Won:</strong> 1</p>
+        <p><strong>NRR:</strong> <span class="nrr positive">0.493</span></p>
+        <p><strong>Recent Form:</strong> <span class="form">W</span></p>
+    </div>
+
+    <div class="points-card">
+        <h3>5. DELHI CAPITALS</h3>
+        <img src="dc.png" alt="Delhi Capitals">
+        <p><strong>Points:</strong> 2</p>
+        <p><strong>Played:</strong> 1</p>
+        <p><strong>Won:</strong> 1</p>
+        <p><strong>NRR:</strong> <span class="nrr positive">0.493</span></p>
+        <p><strong>Recent Form:</strong> <span class="form">W</span></p>
+    </div>
+    </div>
+
+    <button class="full-table-btn" onclick="openpage1()">Full Points Table</button>
+
+
+   
+
+
+    <script>
+        function startSlideshow(imageBox) {
+            let slides = imageBox.getElementsByClassName('slide');
+            let index = 0;
+
+            function showSlide() {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = 'none';
+                }
+                slides[index].style.display = 'block';
+                index = (index + 1) % slides.length;
+            }
+
+            showSlide();
+            setInterval(showSlide, 2000);
+        }
+
+        document.querySelectorAll('.image-box').forEach(box => {
+            startSlideshow(box);
+        });
+        function openPage() {
+        window.location.href = "teams.html";  // Replace 'newpage.html' with the actual URL
+    }
+    function openpage1(){
+        window.location.href = "http://localhost/H2_PROJECT/points_table/points_table.php";
+    }
+    </script>
+
+
+<footer class="footer">
+    <div>
+        <h3>TEAM</h3>
+        <ul>
+            <li><a href="#">Chennai Super Kings</a></li>
+            <li><a href="#">Delhi Capitals</a></li>
+            <li><a href="#">Gujarat Titans</a></li>
+            <li><a href="#">Kolkata Knight Riders</a></li>
+            <li><a href="#">Lucknow Super Giants</a></li>
+            <li><a href="#">Mumbai Indians</a></li>
+            <li><a href="#">Punjab Kings</a></li>
+            <li><a href="#">Rajasthan Royals</a></li>
+            <li><a href="#">Royal Challengers Bengaluru</a></li>
+            <li><a href="#">Sunrisers Hyderabad</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3>ABOUT</h3>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Anti Corruption Code</a></li>
+            <li><a href="#">Anti Doping Rules</a></li>
+            <li><a href="#">TUE Application Form</a></li>
+            <li><a href="#">Anti Discrimination Code</a></li>
+            <li><a href="#">Clothing & Equipment Regulations</a></li>
+            <li><a href="#">Code Of Conduct For Players</a></li>
+            <li><a href="#">News Access Regulations</a></li>
+            <li><a href="#">Image Use Terms</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3>GUIDELINES</h3>
+        <ul>
+            <li><a href="#">Code Of Conduct For Officials</a></li>
+            <li><a href="#">Brand & Protection Guidelines</a></li>
+            <li><a href="#">Governing Council</a></li>
+            <li><a href="#">Match Playing Conditions</a></li>
+            <li><a href="#">PMOA Minimum Standard</a></li>
+            <li><a href="#">Suspect Action Policy</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3>CONTACT</h3>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Sponsorship</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+    </div>
+</footer>
+
+<div class="footer-bottom">
+    Copyright © IPL 2025 All Rights Reserved.
+</div>
+
+</body>
+
+</html>
+
+
